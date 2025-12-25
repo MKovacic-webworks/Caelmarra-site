@@ -4,7 +4,7 @@ export default function Hero() {
   const scrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
-      const headerHeight = 120;
+      const headerHeight = 80;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - headerHeight;
 
