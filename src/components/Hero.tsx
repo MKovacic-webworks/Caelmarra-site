@@ -1,8 +1,8 @@
 import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
       const headerHeight = 80;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
@@ -70,17 +70,17 @@ export default function Hero() {
         <p className="text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed animate-fadeInUp mb-8" style={{ animationDelay: '0.6s' }}>
           Where Sky, Sea, and Earth converge to create extraordinary journeys
         </p>
-        <a
-          href="#contact"
+        <button
+          onClick={() => scrollToSection('contact')}
           className="inline-block bg-transparent text-white px-8 py-3 rounded-full border-2 border-white hover:bg-white hover:text-black transition-all duration-300 text-lg font-medium animate-fadeInUp"
           style={{ animationDelay: '0.9s' }}
         >
           Begin Your Escape
-        </a>
+        </button>
       </div>
 
       <button
-        onClick={scrollToAbout}
+        onClick={() => scrollToSection('about')}
         className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer hover:opacity-70 transition-opacity"
       >
         <ChevronDown size={40} />
